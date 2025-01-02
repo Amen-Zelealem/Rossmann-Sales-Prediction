@@ -3,3 +3,6 @@ RossmanSales
 
 # Data
 data
+
+# Pycache
+__pycache__
