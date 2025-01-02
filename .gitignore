@@ -1,5 +1,6 @@
 # Ignore Virutal Environment
 RossmanSales
+.venv
 
 # Data
 data
