@@ -1,3 +1,9 @@
 # Ignore Virutal Environment
 RossmanSales
+.venv
 
+# Data
+data
+
+# Pycache
+__pycache__
