@@ -86,6 +86,26 @@ def feature_engineering(self):
         lambda x: min([(x - h).days for h in holidays if h <= x], default=np.nan)
     )
 
+def preprocess(self):
+    """
+    Execute all preprocessing steps sequentially.
+    """
+    print("Handling missing values...")
+    self.handle_missing_values()
 
+    print("Extracting datetime features...")
+    self.extract_datetime_features()
+
+    print("Performing feature engineering...")
+    self.feature_engineering()
+
+    print("Encoding categorical data...")
+    self.encode_categorical_data()
+
+    print("Scaling numeric features...")
+    self.scale_numeric_features()
+
+    print("Preprocessing complete.")
+    return self.df
 
 
