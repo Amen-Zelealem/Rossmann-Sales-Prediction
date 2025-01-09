@@ -49,3 +49,21 @@ def extract_datetime_features(self):
     # One-hot encode MonthPosition
     self.df = pd.get_dummies(self.df, columns=['MonthPosition'], drop_first=True)
 
+
+def encode_categorical_data(self):
+    """
+    Encodes categorical data:
+    - Label encoding for specific ordinal columns.
+    - One-hot encoding for nominal columns.
+    """
+    label_cols = ['StateHoliday', 'StoreType', 'Assortment']
+    label_encoder = LabelEncoder()
+
+    for col in label_cols:
+        if col in self.df.columns:
+            self.df[col] = label_encoder.fit_transform(self.df[col])
+
+    onehot_cols = ['DayOfWeek', 'Quarter']
+    self.df = pd.get_dummies(self.df, columns=onehot_cols, drop_first=True)
+
+
