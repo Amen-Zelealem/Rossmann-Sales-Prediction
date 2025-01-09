@@ -73,5 +73,19 @@ def scale_numeric_features(self):
     num_cols = self.df.select_dtypes(include=['int64', 'float64']).columns
     self.df[num_cols] = self.scaler.fit_transform(self.df[num_cols])
 
+def feature_engineering(self):
+    """
+    Add features for holidays, promotions, and competitor data.
+    """
+    holidays = pd.to_datetime(['2024-12-25', '2024-01-01'])  # Example dates
+
+    self.df['DaysToNextHoliday'] = self.df['Date'].apply(
+        lambda x: min([(h - x).days for h in holidays if h >= x], default=np.nan)
+    )
+    self.df['DaysAfterLastHoliday'] = self.df['Date'].apply(
+        lambda x: min([(x - h).days for h in holidays if h <= x], default=np.nan)
+    )
+
+
 
 
