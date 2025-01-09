@@ -66,4 +66,12 @@ def encode_categorical_data(self):
     onehot_cols = ['DayOfWeek', 'Quarter']
     self.df = pd.get_dummies(self.df, columns=onehot_cols, drop_first=True)
 
+def scale_numeric_features(self):
+    """
+    Scales numerical features using StandardScaler.
+    """
+    num_cols = self.df.select_dtypes(include=['int64', 'float64']).columns
+    self.df[num_cols] = self.scaler.fit_transform(self.df[num_cols])
+
+
 
