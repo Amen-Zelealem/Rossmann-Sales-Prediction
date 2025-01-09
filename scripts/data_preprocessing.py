@@ -28,3 +28,24 @@ def handle_missing_values(self):
 
     self.df[num_cols] = SimpleImputer(strategy='median').fit_transform(self.df[num_cols])
     self.df[cat_cols] = SimpleImputer(strategy='most_frequent').fit_transform(self.df[cat_cols])
+
+
+def extract_datetime_features(self):
+    """
+    Extracts features from the 'Date' column.
+    """
+    self.df['Date'] = pd.to_datetime(self.df['Date'])
+
+    # Extracting day of week, weekend flag, and quarter
+    self.df['DayOfWeek'] = self.df['Date'].dt.dayofweek
+    self.df['IsWeekend'] = self.df['DayOfWeek'].apply(lambda x: 1 if x >= 5 else 0)
+    self.df['Quarter'] = self.df['Date'].dt.quarter
+
+    # Generate MonthPosition feature
+    self.df['MonthPosition'] = self.df['Date'].dt.day.apply(
+        lambda x: 'Start' if x <= 10 else ('Mid' if x <= 20 else 'End')
+    )
+
+    # One-hot encode MonthPosition
+    self.df = pd.get_dummies(self.df, columns=['MonthPosition'], drop_first=True)
+
