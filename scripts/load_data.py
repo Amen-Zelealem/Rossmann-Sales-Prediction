@@ -26,25 +26,7 @@ def load_csv_from_zip(extracted_dir: str, filename: str) -> pd.DataFrame:
     """
     file_path = os.path.join(extracted_dir, filename)
     
-    try:
-        # Specify dtype for column 7 as integer
-        df = pd.read_csv(
-            file_path,
-            index_col=0,
-            dtype={7: int},  # Replace 7 with the actual column name or index
-            low_memory=False
-        )
-        
-        return df
-    
-    except ValueError as e:
-        print("ValueError encountered while loading the CSV. Attempting to fix...")
-        
-        # Load without specifying dtype, then clean the column
-        df = pd.read_csv(file_path, index_col=0, low_memory=False)
-        df.iloc[:, 7] = pd.to_numeric(df.iloc[:, 7], errors='coerce').fillna(0).astype(int)
-        
-        return df
+    return pd.read_csv(file_path, index_col=0)
     
 def load_data(zip_path: str, filename: str, extract_to) -> pd.DataFrame:
     """
