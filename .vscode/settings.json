@@ -1,4 +1,13 @@
 {
-    "python.pythonPath": "RossmanSales/bin/python",
-    "editor.formatOnSave": true
+  "python.pythonPath": "RossmanSales/bin/python",
+  "editor.formatOnSave": true,
+  "task.allowAutomaticTasks": true,
+  "debug.openDebug": "neverOpen",
+  "terminal.integrated.inheritEnv": false,
+  "tasks": {
+    "label": "lint on open",
+    "type": "shell",
+    "command": "npm run lint",
+    "runOn": "folderOpen"
   }
+}

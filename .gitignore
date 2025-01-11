@@ -7,3 +7,5 @@ data
 
 # Pycache
 __pycache__
+config.bat
+node_modules
