@@ -47,7 +47,6 @@ The project is organized to ensure reproducible and scalable data processing, mo
         README.md
         __init__.py
 |   .gitignore
-|   folder-structure.txt
 |   README.md
 |   requirements.txt
 \  
