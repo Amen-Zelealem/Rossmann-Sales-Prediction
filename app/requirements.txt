@@ -1,6 +1,7 @@
-scikit-learn
+Flask
 pandas
 numpy
-flask
-joblib
-gunicorn
+scikit-learn
+matplotlib
+seaborn
+missingno
