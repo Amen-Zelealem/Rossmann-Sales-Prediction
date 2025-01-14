@@ -9,7 +9,6 @@ data
 __pycache__
 
 # Models
-sales_model_2025-01-11-17-46-44.pkl
 sales_model_2025-01-11-18-16-29.pkl
 
-notebooks/models
+
