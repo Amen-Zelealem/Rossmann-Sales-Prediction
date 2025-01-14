@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <title>📊 Prediction Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f4f8;
+        margin: 0;
+        padding: 0;
+      }
+      .header {
+        background-color: #4a90e2;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        border-radius: 8px;
+        margin: 20px;
+      }
+      .header h1 {
+        font-size: 2.5em;
+        margin: 0;
+      }
+      .header p {
+        font-size: 1.2em;
+      }
+      .footer {
+        background-color: #4a90e2; 
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gradient-to-r from-indigo-200 via-purple-200 to-pink-200 min-h-screen flex items-center justify-center p-4"
+  >
+    <div class="w-full max-w-5xl bg-white shadow-2xl rounded-lg p-8">
+      <div class="header">
+        <h1>📊 Rossmann Sales Prediction</h1>
+        <p>Fill the form below to predict your sales !</p>
+      </div>
+
+      <!-- <div class="bg-white shadow-lg rounded-lg p-8"> -->
+
+      <form action="/" method="POST" class="space-y-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Store -->
+          <div class="mb-4">
+            <label
+              for="Store"
+              class="block text-lg font-semibold text-gray-800 mb-2"
+            >
+              Store:
+            </label>
+            <input
+              type="number"
+              name="Store"
+              id="Store"
+              required
+              class="w-full border border-gray-300 rounded-md shadow-sm px-4 py-3 transition duration-200 ease-in-out focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-400"
+            />
+          </div>
+          <!-- DayOfWeek -->
+          <div>
+            <label
+              for="DayOfWeek"
+              class="block text-lg font-semibold text-gray-800 mb-2"
+              >Day of Week:</label
+            >
+            <input
+              type="number"
+              name="DayOfWeek"
+              id="DayOfWeek"
+              required
+              class="w-full border border-gray-300 rounded-md shadow-sm px-4 py-3 transition duration-200 ease-in-out focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-400"
+            />
+          </div>
+          <!-- Customers -->
+          <div class="mb-4">
+            <label
+              for="Customers"
+              class="block text-lg font-semibold text-gray-800 mb-2"
+              >Customers:</label
+            >
+            <input
+              type="number"
+              name="Customers"
+              id="Customers"
+              required
+              class="w-full border border-gray-300 rounded-md shadow-sm px-4 py-3 transition duration-200 ease-in-out focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-400"
+            />
+          </div>
+          <!-- Open -->
+          <div class="mb-4">
+            <label
+              for="Open"
+              class="block text-lg font-semibold text-gray-800 mb-2"
+              >Open Store:</label
+            >
+
+            <select
+              name="Open"
+              id="Open"
+              required
+              class="w-full border border-gray-300 rounded-md shadow-sm px-4 py-3 transition duration-200 ease-in-out focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-400"
+            >
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select>
+          </div>
+
+          <!-- Promo -->
+          <div class="mb-4">
+            <label
+              for="Promo"
+              class="block text-lg font-semibold text-gray-800 mb-2"
+              >Promo :</label
+            >
+            <select
+              name="Promo"
+              id="Promo"
+              required
+              class="w-full border border-gray-300 rounded-md shadow-sm px-4 py-3 transition duration-200 ease-in-out focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-400"
+            >
+              <option value="1">Active</option>
+              <option value="0">Inactive</option>
+            </select>
+          </div>
+
+          <!-- State Holiday -->
+          <div class="mb-4">
+            <label
+              for="StateHoliday"
+              class="block text-lg font-semibold text-gray-800 mb-2"
+              >State Holiday (0, 1, or 2):</label
+            >
+            <input
+              type="number"
+              name="StateHoliday"
+              id="StateHoliday"
+              required
+              class="w-full border border-gray-300 rounded-md shadow-sm px-4 py-3 transition duration-200 ease-in-out focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-400"
+            />
+          </div>
+
+          <!-- School Holiday -->
+          <div class="mb-4">
+            <label
+              for="SchoolHoliday"
+              class="block text-lg font-semibold text-gray-800 mb-2"
+              >School Holiday:</label
+            >
+            <select
+              name="SchoolHoliday"
+              id="SchoolHoliday"
+              required
+              class="w-full border border-gray-300 rounded-md shadow-sm px-4 py-3 transition duration-200 ease-in-out focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-400"
+            >
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select>
+          </div>
+          <!-- Store Type -->
+          <div class="mb-4">
+            <label
+              for="StoreType"
+              class="block text-lg font-semibold text-gray-800 mb-2"
+              >Store Type:</label
+            >
+            <input
+              type="number"
+              name="StoreType"
+              id="StoreType"
+              required
+              class="w-full border border-gray-300 rounded-md shadow-sm px-4 py-3 transition duration-200 ease-in-out focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-400"
+            />
+          </div>
+          <!-- Assortment -->
+          <div class="mb-4">
+            <label
+              for="Assortment"
+              class="block text-lg font-semibold text-gray-800 mb-2"
+              >Assortment:</label
+            >
+            <input
+              type="number"
+              name="Assortment"
+              id="Assortment"
+              required
+              class="w-full border border-gray-300 rounded-md shadow-sm px-4 py-3 transition duration-200 ease-in-out focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-400"
+            />
+          </div>
+          <!-- Completion Distance -->
+          <div class="mb-4">
+            <label
+              for="CompetitionDistance"
+              class="block text-lg font-semibold text-gray-800 mb-2"
+              >Competition Distance:</label
+            >
+            <input
+              type="number"
+              name="CompetitionDistance"
+              id="CompetitionDistance"
+              required
+              class="w-full border border-gray-300 rounded-md shadow-sm px-4 py-3 transition duration-200 ease-in-out focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-400"
+            />
+          </div>
+
+          <!-- CompetitionOpenSinceMonth -->
+          <div class="mb-4">
+            <label
+              for="CompetitionOpenSinceMonth"
+              class="block text-lg font-semibold text-gray-800 mb-2"
+              >Competition Open Since Month:</label
+            >
+            <input
+              type="number"
+              name="CompetitionOpenSinceMonth"
+              id="CompetitionOpenSinceMonth"
+              required
+              class="w-full border border-gray-300 rounded-md shadow-sm px-4 py-3 transition duration-200 ease-in-out focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-400"
+            />
+          </div>
+
+          <!-- CompetitionOpenSinceYear -->
+          <div class="mb-4">
+            <label
+              for="CompetitionOpenSinceYear"
+              class="block text-lg font-semibold text-gray-800 mb-2"
+              >Competition Open Since Year:</label
+            >
+            <input
+              type="number"
+              name="CompetitionOpenSinceYear"
+              id="CompetitionOpenSinceYear"
+              required
+              class="w-full border border-gray-300 rounded-md shadow-sm px-4 py-3 transition duration-200 ease-in-out focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-400"
+            />
+          </div>
+
+          <!-- Promo2 -->
+          <div class="mb-4">
+            <label
+              for="Promo2"
+              class="block text-lg font-semibold text-gray-800 mb-2"
+              >Promo2:</label
+            >
+            <select
+              name="Promo2"
+              id="Promo2"
+              required
+              class="w-full border border-gray-300 rounded-md shadow-sm px-4 py-3 transition duration-200 ease-in-out focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-400"
+            >
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select>
+          </div>
+          <!-- Promo2SinceWeek -->
+          <div class="mb-4">
+            <label
+              for="Promo2SinceWeek"
+              class="block text-lg font-semibold text-gray-800 mb-2"
+              >Promo2 Since Week:</label
+            >
+            <input
+              type="number"
+              name="Promo2SinceWeek"
+              id="Promo2SinceWeek"
+              required
+              class="w-full border border-gray-300 rounded-md shadow-sm px-4 py-3 transition duration-200 ease-in-out focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-400"
+            />
+          </div>
+
+          <!-- Promo2SinceYear -->
+          <div class="mb-4">
+            <label
+              for="Promo2SinceYear"
+              class="block text-lg font-semibold text-gray-800 mb-2"
+              >Promo2 Since Year:</label
+            >
+            <input
+              type="number"
+              name="Promo2SinceYear"
+              id="Promo2SinceYear"
+              required
+              class="w-full border border-gray-300 rounded-md shadow-sm px-4 py-3 transition duration-200 ease-in-out focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-400"
+            />
+          </div>
+          <!-- PromoInterval -->
+          <div class="mb-4">
+            <label
+              for="PromoInterval"
+              class="block text-lg font-semibold text-gray-800 mb-2"
+              >Promo Interval:</label
+            >
+            <input
+              type="number"
+              name="PromoInterval"
+              id="PromoInterval"
+              required
+              class="w-full border border-gray-300 rounded-md shadow-sm px-4 py-3 transition duration-200 ease-in-out focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-400"
+            />
+          </div>
+
+          <!-- Day -->
+          <div class="mb-4">
+            <label
+              for="Day"
+              class="block text-lg font-semibold text-gray-800 mb-2"
+              >Day:</label
+            >
+            <input
+              type="number"
+              name="Day"
+              id="Day"
+              required
+              class="w-full border border-gray-300 rounded-md shadow-sm px-4 py-3 transition duration-200 ease-in-out focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-400"
+            />
+          </div>
+
+          <!-- WeekOfYear -->
+          <div class="mb-4">
+            <label
+              for="WeekOfYear"
+              class="block text-lg font-semibold text-gray-800 mb-2"
+              >Week of Year:</label
+            >
+            <input
+              type="number"
+              name="WeekOfYear"
+              id="WeekOfYear"
+              required
+              class="w-full border border-gray-300 rounded-md shadow-sm px-4 py-3 transition duration-200 ease-in-out focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-400"
+            />
+          </div>
+
+          <!-- Month -->
+          <div class="mb-4">
+            <label
+              for="Month"
+              class="block text-lg font-semibold text-gray-800 mb-2"
+              >Month:</label
+            >
+            <input
+              type="number"
+              name="Month"
+              id="Month"
+              required
+              class="w-full border border-gray-300 rounded-md shadow-sm px-4 py-3 transition duration-200 ease-in-out focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-400"
+            />
+          </div>
+
+          <!-- Year -->
+          <div class="mb-4">
+            <label
+              for="Year"
+              class="block text-lg font-semibold text-gray-800 mb-2"
+              >Year:</label
+            >
+            <input
+              type="number"
+              name="Year"
+              id="Year"
+              required
+              class="w-full border border-gray-300 rounded-md shadow-sm px-4 py-3 transition duration-200 ease-in-out focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-400"
+            />
+          </div>
+
+          <!-- IsWeekend -->
+          <div class="mb-4">
+            <label
+              for="IsWeekend"
+              class="block text-lg font-semibold text-gray-800 mb-2"
+              >Is Weekend:</label
+            >
+            <select
+              name="IsWeekend"
+              id="IsWeekend"
+              required
+              class="w-full border border-gray-300 rounded-md shadow-sm px-4 py-3 transition duration-200 ease-in-out focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-400"
+            >
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select>
+          </div>
+
+          <!-- IsBeginningOfMonth -->
+          <div class="mb-4">
+            <label
+              for="IsBeginningOfMonth"
+              class="block text-lg font-semibold text-gray-800 mb-2"
+              >Is Beginning of Month:</label
+            >
+            <select
+              name="IsBeginningOfMonth"
+              id="IsBeginningOfMonth"
+              required
+              class="w-full border border-gray-300 rounded-md shadow-sm px-4 py-3 transition duration-200 ease-in-out focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-400"
+            >
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select>
+          </div>
+
+          <!-- IsMidMonth -->
+          <div class="mb-4">
+            <label
+              for="IsMidMonth"
+              class="block text-lg font-semibold text-gray-800 mb-2"
+              >Is Mid Month:</label
+            >
+            <select
+              name="IsMidMonth"
+              id="IsMidMonth"
+              required
+              class="w-full border border-gray-300 rounded-md shadow-sm px-4 py-3 transition duration-200 ease-in-out focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-400"
+            >
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select>
+          </div>
+
+          <div class="mb-4">
+            <label
+              for="IsEndOfMonth"
+              class="block text-lg font-semibold text-gray-800 mb-2"
+              >Is End of Month:</label
+            >
+            <select
+              name="IsEndOfMonth"
+              id="IsEndOfMonth"
+              required
+              class="w-full border border-gray-300 rounded-md shadow-sm px-4 py-3 transition duration-200 ease-in-out focus:ring-2 focus:ring-blue-500 focus:outline-none hover:border-blue-400"
+            >
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select>
+          </div>
+
+          <div class="flex justify-left mb-27">
+            <button
+                type="submit"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow transition duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50"
+            >
+                Submit
+            </button>
+        </div>
+        
+      </form>
+
+      <!-- </div> -->
+      {% if prediction %}
+      <div class="mt-5 p-4 bg-green-200 rounded">
+        <h2 class="text-md font-bold">Prediction Results:</h2>
+        <p>Predicted Sales: {{ prediction }}</p>
+      </div>
+      {% endif %}
+    </div>
+  
+    <footer class="footer text-white py-4 mt-10 w-full">
+        <div class="container mx-auto text-center">
+          <p>
+            © 2025 📊 Rossmann Sales Prediction by Amen Zelealem. All rights reserved.
+          </p>
+          <p>
+            <a
+              href="https://github.com/Amen-Zelealem/Rossmann-Sales-Prediction"
+              class="text-white underline"
+            >
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            |
+            <a
+              href="https://www.linkedin.com/in/Amen-Zelealem"
+              class="text-white underline"
+            >
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+          </p>
+        </div>
+      </footer>
+      
+</body>
+</html>
