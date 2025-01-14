@@ -73,13 +73,21 @@ The project is meticulously organized for reproducibility and scalability across
 
 Clone the repository:
 
-```git clone https://github.com/Amen-Zelealem/Rossmann-Sales-Prediction```
-change directory: 
-```cd Rossmann-Sales-Prediction```
+```
+git clone https://github.com/Amen-Zelealem/Rossmann-Sales-Prediction
+
+```
+change directory:
+
+```
+cd Rossmann-Sales-Prediction
+```
 
 2. Install the required packages:
 
-```pip install -r requirements.txt```
+```
+pip install -r requirements.txt
+```
 
 ## 📈 **Visualization**
 
@@ -121,15 +129,21 @@ Contributions are welcome! Please follow these steps:
    
 2. Create a new branch: 
    
-```git checkout -b feature-branch ```  
+```
+git checkout -b feature-branch 
+```  
 
 3. Make your changes and commit: 
 
-```git commit -m 'Add new feature' ```
+```
+git commit -m 'Add new feature' 
+```
   
 4. Push to the branch:
  
-```git push origin feature-branch```
+```
+git push origin feature-branch
+```
 
 5. Open a pull request.
    
