@@ -74,6 +74,7 @@ The project is meticulously organized for reproducibility and scalability across
 Clone the repository:
 
 ```git clone https://github.com/Amen-Zelealem/Rossmann-Sales-Prediction```
+change directory: 
 ```cd Rossmann-Sales-Prediction```
 
 2. Install the required packages:
@@ -86,38 +87,58 @@ Clone the repository:
 
 ![Outlier](/screenshots/outlier.png)
 
+Fig 1. OutlierDetections
 
 ### **Promo Distributions**
 
 ![promotionDistribution](/screenshots/promoDistribution.png)
 
+Fig 2. PromotionDistributions
 
 ### **Sales Behaviour Before, During and after Holidays**
 
 ![salesBehaviour](/screenshots/salesBehaviour.png)
 
+Fig 3. Sales Behaviour 
 
 ###  🖥️ **FLASK APPLICATION SCREENSHOTS**
 
 ![predictionForm](/screenshots/predictionForm.png)
 
+Fig 4. PredictionForm
 
 ![predictionResult](/screenshots/predictionResult.png)
 
-For more experience, you can refer to this site on [Rossmann Sales Prediction](https://flaskdeployment-83p9.onrender.com/).
+Fig 5. PredictionResult
+
+### For more experience, you can refer to this site on [Rossmann Sales Prediction](https://flaskdeployment-83p9.onrender.com/).
 
 ## 🤝 Contributing
 
 Contributions are welcome! Please follow these steps:
 
 1. Fork the repository.
+   
 2. Create a new branch: 
+   
 ```git checkout -b feature-branch ```  
+
 3. Make your changes and commit: 
-```git commit -m 'Add new feature' ```  
-4. Push to the branch: 
-```git push origin feature-branch```   
+
+```git commit -m 'Add new feature' ```
+  
+4. Push to the branch:
+ 
+```git push origin feature-branch```
+
 5. Open a pull request.
    
----Thank you for your interest in the **Rossmann Sales Forecasting project**! 
-Let's make sales predictions smarter together! 
+### 👨🏼‍💻Thank you for your interest in the **Rossmann Sales Forecasting project**! 
+
+Feel free to reach out using the contact below:
+
+✉️ [Amen-Zelealem](mailto:amenzelealem@gmail.com)
+
+## **🌟 Let's make sales predictions smarter together!**
+
+
