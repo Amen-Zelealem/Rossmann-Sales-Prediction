@@ -73,16 +73,12 @@ The project is meticulously organized for reproducibility and scalability across
 
 Clone the repository:
 
-```
-git clone https://github.com/Amen-Zelealem/Rossmann-Sales-Prediction
-cd Rossmann-Sales-Prediction
-```
+```git clone https://github.com/Amen-Zelealem/Rossmann-Sales-Prediction```
+```cd Rossmann-Sales-Prediction```
 
 2. Install the required packages:
 
-```
-pip install -r requirements.txt
-```
+```pip install -r requirements.txt```
 
 ## 📈 **Visualization**
 
