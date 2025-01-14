@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <title>Prediction Result</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f4f8;
+        margin: 0;
+        padding: 0;
+      }
+      .header {
+        background-color: #4a90e2;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        border-radius: 8px;
+        margin: 20px;
+      }
+      .header h1 {
+        font-size: 2.5em;
+        margin: 0;
+      }
+      .header p {
+        font-size: 1.2em;
+      }
+      .footer {
+        background-color: #4a90e2;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gradient-to-r from-indigo-200 via-purple-200 to-pink-200 min-h-screen"
+  >
+    <!-- Main Content -->
+    <main class="flex items-center justify-center py-10 px-4">
+      <div class="w-full max-w-5xl bg-white shadow-lg rounded-lg p-8">
+        <div class="header">
+          <h1>📊 Prediction Result</h1>
+          <p>Discover insights and forecasts for your sales!</p>
+        </div>
+
+        <table
+          class="min-w-full bg-white border-collapse border border-gray-200"
+        >
+          <thead>
+            <tr>
+              <th
+                class="py-2 px-4 bg-indigo-100 border border-gray-300 text-left"
+              >
+                Field
+              </th>
+              <th
+                class="py-2 px-4 bg-indigo-100 border border-gray-300 text-left"
+              >
+                Value
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border px-4 py-2">🛍️ Store</td>
+              <td class="border px-4 py-2">{{ store }}</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-2">📅 Day of Week</td>
+              <td class="border px-4 py-2">{{ day_of_week }}</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-2">👥 Customers</td>
+              <td class="border px-4 py-2">{{ customers }}</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-2">🏛️ State Holiday</td>
+              <td class="border px-4 py-2">{{ state_holiday }}</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-2">🏪 Store Type</td>
+              <td class="border px-4 py-2">{{ store_type }}</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-2">📦 Assortment</td>
+              <td class="border px-4 py-2">{{ assortment }}</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-2">📍 Competition Distance</td>
+              <td class="border px-4 py-2">{{ competition_distance }}</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-2">📅 Competition Open Since Month</td>
+              <td class="border px-4 py-2">
+                {{ competition_open_since_month }}
+              </td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-2">📆 Competition Open Since Year</td>
+              <td class="border px-4 py-2">
+                {{ competition_open_since_year }}
+              </td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-2">📅 Promo2 Since Week</td>
+              <td class="border px-4 py-2">{{ promo2_since_week }}</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-2">📆 Promo2 Since Year</td>
+              <td class="border px-4 py-2">{{ promo2_since_year }}</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-2">🗓️ Promo Interval</td>
+              <td class="border px-4 py-2">{{ promo_interval }}</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-2">🗓️ Day</td>
+              <td class="border px-4 py-2">{{ day }}</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-2">📅 Week of Year</td>
+              <td class="border px-4 py-2">{{ week_of_year }}</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-2">📆 Month</td>
+              <td class="border px-4 py-2">{{ month }}</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-2">📅 Year</td>
+              <td class="border px-4 py-2">{{ year }}</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-2 font-bold" style="font-size: 1.5em">
+                🔮 Prediction
+              </td>
+              <td
+                class="border px-4 py-2 font-bold text-indigo-600"
+                style="font-size: 1.5em"
+              >
+                {{ prediction }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="text-center mt-8">
+          <a
+            href="/"
+            class="inline-block bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-500 transition"
+          >
+            Go Back
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer text-white py-4 mt-10 w-full">
+      <div class="container mx-auto text-center">
+        <p>
+          © 2025 📊 Rossmann Sales Prediction by Amen Zelealem. All rights
+          reserved.
+        </p>
+        <p>
+          <a
+            href="https://github.com/Amen-Zelealem/Rossmann-Sales-Prediction"
+            class="text-white underline"
+          >
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          |
+          <a
+            href="https://www.linkedin.com/in/Amen-Zelealem"
+            class="text-white underline"
+          >
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
